@@ -30,7 +30,7 @@ Our organization requires a secure, scalable, and user-friendly auction platform
 - Implement administrative tools for monitoring and moderation to maintain auction integrity.
 
 ***
-[5](https://mobirise.com/website-templates/auction-website-templates/)
+
 [6](https://forbytes.com/blog/how-to-build-an-auction-website/)
 [7](https://rfply.com/auction-platform-business-proposal-template/)
 [8](https://themeslay.com/auction-website-and-online-bidding-website-themes-templates/)
