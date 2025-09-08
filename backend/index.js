@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.get('/', (req, res) => {
-    res.send('Welcome to the Weather App!');
+    res.send('Welcome to the Open-Bid Marketplace!');
 });
 // Start the server
 app.listen(port, () => {
