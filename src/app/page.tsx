@@ -1,50 +1,34 @@
 'use client';
+
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import { useRouter } from 'next/navigation';
+import Button from '@/components/Button';
 
 export default function WelcomePage() {
-  const router = useRouter();
+  
 
-  const handleRegisterClick = () => {
-    router.push('/api/auth/register');
-  };
-
-  const handleLoginClick = () => {
-    router.push('/api/auth/login');
-  };
+  
 
   return (
-    <main style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '4rem' }}>
-      <h1>Welcome to OpenBid Marketplace!</h1>
-      <button
-        onClick={handleRegisterClick}
+    <div>
+      <Header />
+      <main
         style={{
-          marginTop: '2rem',
-          padding: '0.75rem 2rem',
-          fontSize: '1.2rem',
-          cursor: 'pointer',
-          borderRadius: '6px',
-          border: 'none',
-          background: '#0070f3',
-          color: '#fff'
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          marginTop: '4rem',
         }}
       >
-        Register
-      </button>
-      <button
-        onClick={handleLoginClick}
-        style={{
-          marginTop: '2rem',
-          padding: '0.75rem 2rem',
-          fontSize: '1.2rem',
-          cursor: 'pointer',
-          borderRadius: '6px',
-          border: 'none',
-          background: '#0070f3',
-          color: '#fff'
-        }}
-      >
-        Login
-      </button>
-    </main>
+        {/* Using reusable Button component */}
+        <Button name="register" value="Register" route="/register" />
+        <Button name="login" value="Login" route="/login" />
+
+        
+        
+      </main>
+      <Footer />
+    </div>
   );
 }
