@@ -1,33 +1,50 @@
-"use client";
+'use client';
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
 
-export default function LoginForm() {
+export default function WelcomePage() {
   const router = useRouter();
-  const [loading, setLoading] = useState(false);
 
-  async function handleClick() {
-    setLoading(true);
-    try {
-      const res = await fetch('/api/server', { method: 'GET' });
-      if (res.ok) {
-        const data = await res.json();
-        // You can use data.message here if needed
-        router.push('/'); // go to home
-      } else {
-        // show error
-      }
-    } catch (error) {
-      // handle fetch error
-    } finally {
-      setLoading(false);
-    }
-  }
+  const handleRegisterClick = () => {
+    router.push('/api/auth/register');
+  };
+
+  const handleLoginClick = () => {
+    router.push('/api/auth/login');
+  };
 
   return (
-    <div>
-      {/* inputs if needed */}
-      <button onClick={handleClick} disabled={loading}>Sign in</button>
-    </div>
+    <main style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '4rem' }}>
+      <h1>Welcome to OpenBid Marketplace!</h1>
+      <button
+        onClick={handleRegisterClick}
+        style={{
+          marginTop: '2rem',
+          padding: '0.75rem 2rem',
+          fontSize: '1.2rem',
+          cursor: 'pointer',
+          borderRadius: '6px',
+          border: 'none',
+          background: '#0070f3',
+          color: '#fff'
+        }}
+      >
+        Register
+      </button>
+      <button
+        onClick={handleLoginClick}
+        style={{
+          marginTop: '2rem',
+          padding: '0.75rem 2rem',
+          fontSize: '1.2rem',
+          cursor: 'pointer',
+          borderRadius: '6px',
+          border: 'none',
+          background: '#0070f3',
+          color: '#fff'
+        }}
+      >
+        Login
+      </button>
+    </main>
   );
 }
