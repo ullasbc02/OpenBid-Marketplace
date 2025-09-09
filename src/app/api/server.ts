@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
-
-export async function GET(req: NextRequest) {
-  return NextResponse.json({ message: 'Hello from your backend!' });
+// ... do auth work, set cookies, etc.
+export default async function Home() {
+  const res = await fetch('http://localhost:3000/api/server', { cache: 'no-store' });
+  const data = await res.json();
+  return NextResponse.json({ message: data.message });
 }
