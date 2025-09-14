@@ -25,8 +25,6 @@ export default function WelcomePage() {
         <Button name="register" value="Register" route="/register" />
         <Button name="login" value="Login" route="/login" />
 
-        
-        
       </main>
       <Footer />
     </div>

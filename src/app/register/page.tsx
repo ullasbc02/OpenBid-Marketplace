@@ -1,10 +1,18 @@
 export default function RegisterPage() {
     return (
         <div>
+            <main
+                style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                marginTop: '4rem',
+                }}
+            >
             <h1>Register</h1>
             <form>
                 <div>
-                    <label htmlFor="username">Username:</label>
+                    <label htmlFor="username">Full Name:</label>
                     <input type="text" id="username" name="username" required />
                 </div>
                 <div>
@@ -17,6 +25,7 @@ export default function RegisterPage() {
                 </div>
                 <button type="submit">Register</button>
             </form>
+            </main>
         </div>
     );
 }
